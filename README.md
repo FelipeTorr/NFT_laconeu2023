@@ -22,17 +22,7 @@ And a C++ implementation of the main model is in the repository:
 
 Clone or download this repository.
 
-``` git clone https://github.com/mjescobar/SWSNeuralField.git ```
-
-To avoid the data collected for *'Selection of stimulus parameters for enhancing slow wavesleep events with a Neural-field theory thalamocortical model'* clone with the command __(requires git >2.30.0)__:
-
-``` git clone --depth 1 --sparse --filter=blob:none https://github.com/mjescobar/SWSNeuralField.git ```
-
-``` cd SWSNeuralField ```
-
-``` git sparse-checkout init --cone ```
-
-``` git spatse-checkout set core ```
+``` git clone git@github.com/FelipeTorr/NFT_laconeu2023.git ```
 
 ### Requirements
 
