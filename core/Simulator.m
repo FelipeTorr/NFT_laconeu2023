@@ -339,7 +339,6 @@ classdef Simulator
                 currentTime=n*obj.h; %in samples
                 stimFlags(9)=mean(phi(obj.indexesE,current));
 				%Save data
-			
 				if samplingFlag==1
 					Vstorage(:,nstore)=V;
 					Qstorage(:,nstore)=Q(:,currentQ(1));
@@ -392,7 +391,7 @@ classdef Simulator
             minv=1;
             meanQ=0;
             SOth=-4e-5;
-            nstore=0;
+            nstore=1;
             %Simulation for the previousTime
             for n=1:ceil(1/obj.h*obj.previousTime)
 				[current,currentQ,currentPhi,delay,nstore,samplingFlag,storeFlag]=obj.indexShifting(n,currentQ,nstore);
@@ -453,9 +452,9 @@ classdef Simulator
             minv=1;
             meanQ=0;
             SOth=-4e-5;
-            nstore=1;
             %flags
-            nstore=0;
+            nstore=1;
+            
             %Simulation for the previousTime
             for n=1:ceil(1/obj.h*obj.previousTime)
 				[current,currentQ,currentPhi,delay,nstore,samplingFlag,storeFlag]=obj.indexShifting(n,currentQ,nstore);
@@ -614,14 +613,15 @@ classdef Simulator
 			sample=mod(n,obj.samplingLeap);
 			store=mod(n,obj.storageLeap);
 			if sample==0
-				samplingFlag=1;
-				nstore=nstore+1;
 				if store==0
-					%Plasticity and storage timing control
-					storageFlag=1;
-					%zero, because each sampling add 1, then the first sample has index 1
-					nstore=0;
-				end
+                    %Plasticity and storage timing control
+                    storageFlag=1;
+                    %zero, because each sampling add 1, then the first sample has index 1
+                    nstore=0;
+                end
+                samplingFlag=1;
+				nstore=nstore+1;
+				
 			end
 			
 			

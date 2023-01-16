@@ -37,7 +37,7 @@ Ny=16;
 Lx=0.5;
 Ly=0.5;
 h=1e-4;
-finalTime=5400; %seconds
+finalTime=90; %seconds
 previousTime=5; %seconds
 samplingFrequency=100; %secondds
 
