@@ -5,8 +5,8 @@ The intention of this implementation is to build a testbed of stimulation protoc
 
 
 Model theory and slow-wave sleep tunning details are in:
->Selection of stimulus parameters for enhancing slow wave sleep events with a Neural-field theory thalamocortical computational model
->(https://www.biorxiv.org/content/10.1101/2021.02.03.429528v1.article-metrics)
+>Selection of stimulus parameters for enhancing slow wave sleep events with a neural-field theory thalamocortical model
+>(https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008758)
 
 More details of the model could be found here:
 
