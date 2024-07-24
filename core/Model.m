@@ -107,9 +107,9 @@ classdef Model
 			Q=firingResponse(V,obj.Qmax,obj.theta,obj.inverseSigma_rho);
 		end
 		
-		%% Sigmoid approx
-		function Q=firingResponseApprx(obj,V)
-			Q=obj.Qmax*(1+util.expTruncSerie(-(V-obj.theta)*obj.inverseSigma_rho)).^(-1);
+	%% Sigmoid approx
+	function Q=firingResponseApprx(obj,V)
+		Q=obj.Qmax*(1+util.expTruncSerie(-(V-obj.theta)*obj.inverseSigma_rho)).^(-1);
         end
         %% Linear activation
          %function firing_response=linear(obj,V,Qmax,Q0,a)
@@ -120,10 +120,10 @@ classdef Model
           %  end
         %end
         
-		%% Dynamic matrices
-		function obj=updateDerivateMatrices(obj)
-			obj.A=[0, 1; -obj.alpha*obj.beta, -obj.alpha-obj.beta]';
-            obj.B=[0; obj.alpha*obj.beta]';
+	%% Dynamic matrices
+	function obj=updateDerivateMatrices(obj)
+		obj.A=[0, 1; -obj.alpha*obj.beta, -obj.alpha-obj.beta]';
+            	obj.B=[0; obj.alpha*obj.beta]';
         end
         %% Change values of alpha and beta
         function obj=setalphabeta(obj,alpha,beta)
